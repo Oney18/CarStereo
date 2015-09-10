@@ -16,9 +16,35 @@
         android:layout_weight="1"
         android:background="@color/Darker_Gray">
 
-        <TableLayout
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></TableLayout>
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="75dp"
+                android:id="@+id/invisibleBox"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="800dp"
+                android:layout_height="75dp"
+                android:id="@+id/CDinput"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/Black" />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:columnCount="71">
+
+            </GridLayout>
+
+        </LinearLayout>
     </FrameLayout>
 
 
