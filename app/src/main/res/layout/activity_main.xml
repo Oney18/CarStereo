@@ -4,19 +4,22 @@
     android:weightSum="2"
     android:orientation="vertical" >
 
-    <RelativeLayout android:layout_width="fill_parent"
+    <TableLayout android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="@color/Gray">
 
-    </RelativeLayout>
+    </TableLayout>
 
-    <RelativeLayout android:layout_width="fill_parent"
+    <FrameLayout android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="@color/Darker_Gray">
 
-    </RelativeLayout>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableLayout>
+    </FrameLayout>
 
 
 </LinearLayout>
