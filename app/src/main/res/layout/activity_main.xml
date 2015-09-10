@@ -18,8 +18,8 @@
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center">
 
 
@@ -37,11 +37,60 @@
                 android:background="@color/Black" />
 
             <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:columnCount="71">
+                android:columnCount="74">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:id="@+id/textView"
+                    android:layout_row="0"
+                    android:layout_column="7" />
+
+                <ImageButton
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/play_button"
+                    android:layout_row="7"
+                    android:layout_column="16"
+                    android:src="@mipmap/play" />
+
+                <ImageButton
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/stop_button"
+                    android:layout_row="7"
+                    android:layout_column="53"
+                    android:src="@mipmap/stop" />
+
+                <ImageButton
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/eject_button"
+                    android:layout_row="7"
+                    android:layout_column="71"
+                    android:layout_gravity="left"
+                    android:src="@mipmap/eject" />
+
+                <ImageButton
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/next_button"
+                    android:layout_row="7"
+                    android:layout_column="72"
+                    android:layout_gravity="left"
+                    android:src="@mipmap/next" />
+
+                <ImageButton
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/repeat_button"
+                    android:layout_row="7"
+                    android:layout_column="73"
+                    android:layout_gravity="left"
+                    android:src="@mipmap/repeat" />
             </GridLayout>
 
         </LinearLayout>
