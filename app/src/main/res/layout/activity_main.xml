@@ -4,12 +4,164 @@
     android:weightSum="2"
     android:orientation="vertical" >
 
-    <TableLayout android:layout_width="fill_parent"
+    <LinearLayout android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@color/Gray">
+        android:background="@color/Gray"
+        android:orientation="horizontal"
+        android:weightSum="2">
 
-    </TableLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1">
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="POWER"
+                android:id="@+id/pow_switch"
+                android:textColor="@color/White"
+                android:textSize="25dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:id="@+id/spacer" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <SeekBar
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/seekBar" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:text="VOL -"
+                        android:id="@+id/vol_less_button"
+                        android:textSize="25dp"
+                        android:layout_gravity="center" />
+
+                    <Button
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:text="VOL +"
+                        android:id="@+id/vol_plus_button"
+                        android:textSize="25dp"
+                        android:layout_gravity="center" />
+                </LinearLayout>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:id="@+id/spacer2" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CD"
+                    android:id="@+id/CD_toggle"
+                    android:textColor="@color/White"
+                    android:textSize="20dp" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FM"
+                    android:id="@+id/FM_toggle"
+                    android:textSize="20dp"
+                    android:textColor="@color/White" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AM"
+                    android:id="@+id/AM_toggle"
+                    android:textColor="@color/White"
+                    android:textSize="20dp" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:id="@+id/spacer1" />
+
+            <TextView
+                android:layout_width="400dp"
+                android:layout_height="75dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Widget.DropDownItem"
+                android:text="DISPLAY"
+                android:id="@+id/textView2"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical|center_horizontal"
+                android:textSize="45dp"
+                android:background="@color/White"
+                android:typeface="monospace"
+                android:textStyle="bold|italic"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TUNE -"
+                        android:id="@+id/tuning_down"
+                        android:textSize="25dp" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TUNE +"
+                        android:id="@+id/tuning_up"
+                        android:textSize="25dp" />
+                </LinearLayout>
+            </FrameLayout>
+
+        </LinearLayout>
+    </LinearLayout>
 
     <FrameLayout android:layout_width="fill_parent"
         android:layout_height="0dp"
@@ -40,21 +192,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:columnCount="74">
+                android:columnCount="6">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:id="@+id/textView"
                     android:layout_row="0"
-                    android:layout_column="7" />
+                    android:layout_column="1" />
 
                 <ImageButton
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:id="@+id/play_button"
                     android:layout_row="7"
-                    android:layout_column="16"
+                    android:layout_column="1"
                     android:src="@mipmap/play" />
 
                 <ImageButton
@@ -62,7 +214,7 @@
                     android:layout_height="100dp"
                     android:id="@+id/stop_button"
                     android:layout_row="7"
-                    android:layout_column="53"
+                    android:layout_column="2"
                     android:src="@mipmap/stop" />
 
                 <ImageButton
@@ -70,7 +222,7 @@
                     android:layout_height="100dp"
                     android:id="@+id/eject_button"
                     android:layout_row="7"
-                    android:layout_column="71"
+                    android:layout_column="3"
                     android:layout_gravity="left"
                     android:src="@mipmap/eject" />
 
@@ -79,7 +231,7 @@
                     android:layout_height="100dp"
                     android:id="@+id/next_button"
                     android:layout_row="7"
-                    android:layout_column="72"
+                    android:layout_column="4"
                     android:layout_gravity="left"
                     android:src="@mipmap/next" />
 
@@ -88,7 +240,7 @@
                     android:layout_height="100dp"
                     android:id="@+id/repeat_button"
                     android:layout_row="7"
-                    android:layout_column="73"
+                    android:layout_column="5"
                     android:layout_gravity="left"
                     android:src="@mipmap/repeat" />
             </GridLayout>
