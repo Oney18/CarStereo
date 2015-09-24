@@ -3,4 +3,9 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="power">POWER</string>
+    <string name="volup">VOL +</string>
+    <string name="voldown">VOL -</string>
+    <string name="tunup">TUNE +</string>
+    <string name="tundown">TUNE -</string>
 </resources>
