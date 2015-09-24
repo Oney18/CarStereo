@@ -1,5 +1,6 @@
 package cs301.carstereo;
 
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -43,7 +44,10 @@ public class MainActivity extends ActionBarActivity implements View.OnLongClickL
     int[] AMpresets = {550, 600, 650, 700, 750, 800};
     double[] FMpresets = {90.9, 92.9, 94.9, 96.9, 98.9, 100.9};
     int volVal;
+    int changeVal;
     MediaPlayer templesPlayer;
+
+    AudioManager audio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +56,6 @@ public class MainActivity extends ActionBarActivity implements View.OnLongClickL
 
         FMval = 98.1;
         AMval = 1110;
-        volVal = 50;
         disp = (TextView) findViewById(R.id.stereoDisp);
         powSwitch = (Switch) findViewById(R.id.pow_switch);
         volLevel = (SeekBar) findViewById(R.id.volBar);
@@ -70,9 +73,16 @@ public class MainActivity extends ActionBarActivity implements View.OnLongClickL
         AM = (RadioButton) findViewById(R.id.AM_toggle);
         CD = (RadioButton) findViewById(R.id.CD_toggle);
         options = (RadioGroup) findViewById(R.id.radio_options);
-        volLevel.setProgress(volVal);
+        audio = (AudioManager) getSystemService(MainActivity.this.AUDIO_SERVICE);
 
         templesPlayer= MediaPlayer.create(MainActivity.this, R.raw.temples);
+
+        volLevel.setMax(audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC));
+        changeVal = 1;
+        volVal = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
+
+
+        volLevel.setProgress(volVal);
 
         volLevel.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -145,19 +155,21 @@ public class MainActivity extends ActionBarActivity implements View.OnLongClickL
 
     public void volUp(View view)
     {
-        if(powSwitch.isChecked())
+        if(powSwitch.isChecked() && volVal < 100)
         {
-            volVal += 5;
+            volVal += changeVal;
             volLevel.setProgress(volVal);
+            audio.setStreamVolume(AudioManager.STREAM_MUSIC, volVal,0);
         }
     }
 
     public void volDown(View view)
     {
-        if(powSwitch.isChecked())
+        if(powSwitch.isChecked() && volVal > 0)
         {
-            volVal -= 5;
+            volVal -= changeVal;
             volLevel.setProgress(volVal);
+            audio.setStreamVolume(AudioManager.STREAM_MUSIC, volVal, 0);
         }
     }
 
