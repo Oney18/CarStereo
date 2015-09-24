@@ -35,7 +35,6 @@ public class MainActivity extends ActionBarActivity implements View.OnLongClickL
     RadioButton AM;
     RadioButton CD;
     RadioGroup options;
-    boolean power;
     TextView disp;
 
     double FMval;
@@ -56,7 +55,6 @@ public class MainActivity extends ActionBarActivity implements View.OnLongClickL
         volVal = 50;
         disp = (TextView) findViewById(R.id.stereoDisp);
         powSwitch = (Switch) findViewById(R.id.pow_switch);
-        power = powSwitch.isChecked();
         volLevel = (SeekBar) findViewById(R.id.volBar);
         volDown = (Button) findViewById(R.id.vol_less_button);
         volUp = (Button) findViewById(R.id.vol_plus_button);
